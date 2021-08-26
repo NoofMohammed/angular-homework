@@ -6,8 +6,11 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./home.css'],
 })
 export class HomeComponent implements OnInit {
-  @Input() newTodo: string = '';
+  // @Input() newTodo: string = '';
+  newTodo: string = '';
+  todoUpdated: string = '';
   todos: string[] = ['study', 'read', 'cook'];
+  inputUpdata: Boolean = false
 
   addTodo(newTodo: string): String[] {
     this.todos.push(newTodo);
@@ -29,6 +32,17 @@ if(this.todos.length === 0){
 return false
 
 }
+updateTodo(todo: string , todoUpdated: string): String[] {
+
+  console.log(this.todos[this.todos.indexOf(todo)]);
+  if(this.todos.indexOf(todo) !== -1){
+    this.todos[this.todos.indexOf(todo)]= todoUpdated
+  }
+
+  return this.todos
+}
+
+
  arrayEmpty: boolean = this.TodoEmpty()
  buttonColor: String = "green"
   constructor() {}
