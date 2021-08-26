@@ -1,0 +1,16 @@
+h2.title {
+  text-align: center;
+  color: #1a6962;
+}
+button.buttonDelete {
+  background-color: #2f6e70;
+  width: 22%;
+
+  font-size: 22px;
+  font-family: initial;
+  color: snow;
+}
+lement.style {
+  color:snow;
+  font-size: 24px;
+}
