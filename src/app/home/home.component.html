@@ -1,17 +1,22 @@
 <h2 class="title">TodoList</h2>
 <div class="container">
   <ul class="todo">
-    <li *ngFor="let todo of todos; let i = index" [style.color]="'blue'" >
-
-      <div>
+    <li *ngFor="let todo of todos; let i = index" [style.color]="'blue'">
+      <div class="todo">
         {{ i }}: {{ todo }}
         <div *ngIf="TodoEmpty()">nothing todo</div>
-
-        <button (click)="updateTodo(todo, todoUpdated)" class="btn btn-secondary" class="buttonUpdate">update todo</button>
         <input type="text" [(ngModel)]="todoUpdated" />
-        <button
 
-        class="btn btn-secondary"
+        <button
+          (click)="updateTodo(todo, todoUpdated)"
+          class="btn btn-secondary"
+          class="buttonUpdate"
+        >
+          update todo
+        </button>
+        <button
+          class="color"
+          class="btn btn-primary"
           (click)="deleteTodo(todo)"
           [ngStyle]="{ color: buttonColor, 'font-size': '24px' }"
           class="buttonDelete"
@@ -21,7 +26,7 @@
       </div>
     </li>
   </ul>
-  <input type="text" [(ngModel)]="newTodo" />
-  <button (click)="addTodo(newTodo)">Add todo</button>
+  <input class="add" type="text" [(ngModel)]="newTodo" />
+  <button class="btn btn-primary" (click)="addTodo(newTodo)">Add todo</button>
   <div *ngIf="TodoEmpty()">nothing todo</div>
 </div>

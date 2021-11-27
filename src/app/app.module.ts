@@ -5,16 +5,23 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './app-routing.module';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
+    //   // { path: '/home', pathMatch: 'full', redirectTo: 'home' },
+    //   { path: 'home', component: HomeComponent },
+    // ]
   ],
   providers: [],
   bootstrap: [AppComponent]
